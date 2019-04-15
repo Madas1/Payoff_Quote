@@ -4,9 +4,10 @@
   "description": "AWS Serverless lambda using Babel, Typescript & NodeJS",
   "main": "build/handler.js",
   "scripts": {
+    "run:hello:ms": "serverless invoke local --function hello",
     "deploy": "serverless deploy --aws-profile default",
     "force:deploy": "serverless deploy --aws-profile default --force",
-    "build": "babel ./src --watch --extensions '.ts' --out-dir build",
+    "build": "babel src --watch --extensions \".ts\" --out-dir build",
     "test": "echo nothing yet"
   },
   "endpoint": " ",
@@ -28,7 +29,8 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/node": "^11.13.4",
     "@types/request": "^2.48.1",
-    "babel-preset-minify": "^0.5.0"
+    "babel-preset-minify": "^0.5.0",
+    "serverless": "^1.40.0"
   },
   "dependencies": {
     "aws-sdk": "^2.437.0",

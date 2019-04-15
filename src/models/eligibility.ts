@@ -68,8 +68,6 @@ export interface  IAccountInformation {
 export interface IAccountInformationProcess {
     
     checkEligibleForPayoffQuote: () => boolean;
-    CandianEligibility: () => boolean;
-    UsEligibility: () => boolean;
     checkOnlinePayoffEligibility: () => boolean;
     EligiblityStatus: () => iEligibilityStatus;
     getAccountDetails: () => IAccountInformation;

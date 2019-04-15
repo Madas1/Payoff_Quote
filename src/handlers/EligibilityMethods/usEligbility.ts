@@ -1,7 +1,7 @@
-import { EStateType, EAccountType, ETerminationStatus, EprocessStatus } from "../../models";
+import { EStateType, EAccountType, ETerminationStatus, EprocessStatus, IAccountInformation } from "../../models";
 
 
-export const usEligibility = (eligibleForPayoffQuote, accountInformation): boolean => {
+export const usEligibility = (eligibleForPayoffQuote: boolean, accountInformation: IAccountInformation): boolean => {
 
 
     if ([EStateType.CO, EStateType.FL, EStateType.SD].includes(accountInformation.state) && accountInformation.accountType === EAccountType.lease) {

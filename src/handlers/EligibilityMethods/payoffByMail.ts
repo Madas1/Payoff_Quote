@@ -1,6 +1,6 @@
-import {EAccountType, EStateType, ECountryType} from '../../models';
+import {EAccountType, EStateType, ECountryType, IAccountInformation} from '../../models';
 
-export const checkpayOffByMailEligibility =(eligbilepayOffByMail, accountInformation) : boolean =>{
+export const checkpayOffByMailEligibility =(eligbilepayOffByMail: boolean, accountInformation: IAccountInformation) : boolean =>{
     
     if ([EStateType.CO, EStateType.FL, EStateType.SD].includes(accountInformation.state) && 
     accountInformation.accountType === EAccountType.lease) {

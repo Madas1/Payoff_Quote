@@ -1,15 +1,14 @@
-import {ECountryType} from "../../models";
+import {ECountryType, IAccountInformation} from "../../models";
 import {usEligibility, canadianEligbility} from '../EligibilityMethods';
 
-export const checkEligibleForPayoffQuote = (eligibleForPayoffQuote, accountinformation): boolean =>{
-let {payOffQuoteEligblityStatus} = eligibleForPayoffQuote
+export const checkEligibleForPayoffQuote = (payOffQuoteEligblityStatus: boolean, accountInformation: IAccountInformation): boolean =>{
 
-	if (this.accountInformation.isOpen && this.accountInformation.editable) {
-			if (this.accountInformation.countryType === ECountryType.USA)
-				payOffQuoteEligblityStatus = this.UsEligibility();
+	if (accountInformation.isOpen && accountInformation.editable) {
+			if (accountInformation.countryType === ECountryType.USA)
+				payOffQuoteEligblityStatus = usEligibility(payOffQuoteEligblityStatus, accountInformation);
 
-			if (this.accountInformation.countryType === ECountryType.Canada)
-				payOffQuoteEligblityStatus = this.CanadianEligibility();
+			if (accountInformation.countryType === ECountryType.Canada)
+				payOffQuoteEligblityStatus = canadianEligbility(payOffQuoteEligblityStatus, accountInformation);
         }
-        return eligibleForPayoffQuote;
+        return payOffQuoteEligblityStatus;
 }

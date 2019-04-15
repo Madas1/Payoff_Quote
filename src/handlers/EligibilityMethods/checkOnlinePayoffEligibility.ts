@@ -1,6 +1,6 @@
-import {EAccountType, ECountryType} from "../../models";
+import {EAccountType, ECountryType, IAccountInformation} from "../../models";
 
-export const checkOnlinePayoffEligibility = (eligibleonlinePayoff, accountInformation): boolean => {
+export const checkOnlinePayoffEligibility = (eligibleonlinePayoff: boolean, accountInformation: IAccountInformation): boolean => {
     
     
 
